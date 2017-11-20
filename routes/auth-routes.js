@@ -63,7 +63,9 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 });
 
 
-router.get('/instagram', passport.authenticate('instagram'))
+router.get('/instagram', passport.authenticate('instagram', {
+    scope: ['public_content', 'comments', 'relationships']
+}))
 
 // instagram redirect
 router.get('/instagram/redirect', passport.authenticate('instagram'), function (req, res) {

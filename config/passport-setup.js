@@ -22,10 +22,13 @@ passport.use(
         callbackURL: '/auth/instagram/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
+        // console.log(accessToken, ' : is the access token')
+        // console.log(profile, ' : is the profile information')
+        // console.log(profile, ' : is the profile information')
         User.findOne({userId: profile.provider+profile.id}).then((currentUser) => {
             if(currentUser){
                 // already have this user
-                console.log('user is: ', currentUser);
+                // console.log('user is: ', currentUser);
                 done(null, currentUser);
             } else {
                 // if not, create user in our db
@@ -34,7 +37,7 @@ passport.use(
                     username: profile.displayName,
                     thumbnail: profile._json.data.profile_picture
                 }).save().then((newUser) => {
-                    console.log('created new user: ', newUser);
+                    // console.log('created new user: ', newUser);
                     done(null, newUser);
                 });
             }
@@ -52,7 +55,7 @@ passport.use(
         User.findOne({userId: profile.provider+profile.id}).then((currentUser) => {
             if(currentUser){
                 // already have this user
-                console.log('user is: ', currentUser);
+                // console.log('user is: ', currentUser);
                 done(null, currentUser);
             } else {
                 // if not, create user in our db
@@ -61,7 +64,7 @@ passport.use(
                     username: profile.displayName,
                     thumbnail: profile._json.image.url
                 }).save().then((newUser) => {
-                    console.log('created new user: ', newUser);
+                    // console.log('created new user: ', newUser);
                     done(null, newUser);
                 });
             }
