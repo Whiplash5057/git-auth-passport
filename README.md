@@ -1,4 +1,4 @@
-# o-AUTH For Instagram and Google+
+# o-AUTH - SIMPLE LOGIN AND SIGNUP For Instagram and Google+
 
 
 ### Steps to run code:
