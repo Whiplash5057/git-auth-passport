@@ -2,9 +2,8 @@
 
 
 ### Steps to run code:
-1. npm install   ( To install all dependencies )
-2. nodemon   ( To start the server )
-3. open http://localhost:3090
+1. npm run dev   ( To start the server )
+2. open http://localhost:3090
 
 ### Plugin dependencies:
 
