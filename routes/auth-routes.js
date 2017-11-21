@@ -64,7 +64,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 
 
 router.get('/instagram', passport.authenticate('instagram', {
-    scope: ['public_content', 'comments', 'relationships']
+    scope: ['public_content', 'comments', 'relationships', 'follower_list', 'likes']
 }))
 
 // instagram redirect

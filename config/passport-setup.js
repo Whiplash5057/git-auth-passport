@@ -22,7 +22,7 @@ passport.use(
         callbackURL: '/auth/instagram/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
-        // console.log(accessToken, ' : is the access token')
+        console.log(accessToken, ' : is the access token')
         // console.log(profile, ' : is the profile information')
         // console.log(profile, ' : is the profile information')
         User.findOne({userId: profile.provider+profile.id}).then((currentUser) => {
